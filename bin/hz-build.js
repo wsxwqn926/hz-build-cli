@@ -6,11 +6,11 @@ const hasDir = require('./utils/hasDir');
 
 let cmd, dirname;
 
-program.version(requiredPackageVersion)
+program.version(requiredPackageVersion, '-v, --vers', 'output the current version')
   .usage('<command> [options]');
 
 program.command('create <app-name>')
-  .description('create a new project powered by hz-build')
+  .description('create a new project powered by hz-cli')
   .action(async(name, cmd) => {
     // 判断是否存在创建的目录
     await hasDir(name);

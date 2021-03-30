@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-22 20:45:12
- * @LastEditTime: 2021-03-26 21:20:03
+ * @LastEditTime: 2021-03-30 23:10:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \lerna-cil\packages\hz-main\src\router\index.ts
@@ -13,7 +13,7 @@ import { REDIRECT_NAME } from "./constant";
 const WHITE_NAME_LIST = [LoginRoute.name, REDIRECT_NAME];
 
 const router = createRouter({
-  history: createWebHashHistory((window as any).__POWERED_BY_QIANKUN__ ? "/prisons3DMap" : "/"),
+  history: createWebHashHistory((window as any).__POWERED_BY_QIANKUN__ ? "/hzLib" : "/"),
   routes: (basicRoutes as unknown) as RouteRecordRaw[],
   scrollBehavior: () => ({ left: 0, top: 0 })
 });

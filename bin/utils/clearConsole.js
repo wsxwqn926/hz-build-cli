@@ -1,7 +1,7 @@
 /*
  * @Author: wsx
  * @Date: 2021-03-30 21:26:04
- * @LastEditTime: 2021-03-30 21:33:54
+ * @LastEditTime: 2021-03-31 00:08:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hz-build-cli\bin\utils\clearConsole.js
@@ -18,7 +18,7 @@ const readline = require('readline');
 function clearConsole(color, str) {
   if (process.stdout.isTTY) {
     console.log('');
-    const cutLine = ` hz-build ${require('../../package.json').version} `;
+    const cutLine = ` hz-cli ${require('../../package.json').version} `;
     console.log(chalk.bgCyan(' -'.repeat((process.stdout.columns - cutLine.length) / 4) + cutLine + '- '.repeat((process.stdout.columns - cutLine.length) / 4)));
     const blank = '\n'.repeat(process.stdout.rows);
     console.log(blank);

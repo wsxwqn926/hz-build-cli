@@ -1,24 +1,20 @@
-# hz-finance
+## 目标
 
-## Project setup
-```
-yarn install
-```
+- 通过简单的指令即可快速建立一套空白模板。
+- 提供丰富的、拿来即用的常用功能。
+- 提前解决项目中常见的 Bug。
+- 使开发者逐渐形成严格规范的开发习惯。
 
-### Compiles and hot-reloads for development
+### 安装
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+npm i @hz-lib/hz-build-cli -g
 ```
 
-### Lints and fixes files
+### 更新
 ```
-yarn lint
+npm i @hz-lib/hz-build-cli@latest -g
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 创建项目
+```
+ hz-cli create <app-name>
+```

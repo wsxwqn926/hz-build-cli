@@ -1,7 +1,7 @@
 /*
  * @Author: wsx
  * @Date: 2021-03-30 21:26:04
- * @LastEditTime: 2021-03-30 21:34:18
+ * @LastEditTime: 2021-03-31 00:08:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hz-build-cli\bin\creator.js
@@ -10,6 +10,7 @@
 const fs = require('fs-extra');
 const chalk = require('chalk');
 const path = require('path');
+const setProject = require('./utils/setProject');
 const {
   spawn
 } = require('child_process');
@@ -23,20 +24,21 @@ module.exports = async function (name) {
   // 目标路径
   const dest = path.resolve(process.cwd(), name);
   // copy .gitignore
-  const gitignore = path.resolve(process.cwd(), name, 'gitignore.md');
-  const gitignoreDest = path.resolve(process.cwd(), name, '.gitignore');
+  // const gitignore = path.resolve(process.cwd(), name, 'gitignore.md');
+  // const gitignoreDest = path.resolve(process.cwd(), name, '.gitignore');
 
-  console.log(gitignore, gitignoreDest);
+  // console.log(gitignore, gitignoreDest);
 
   startTime = new Date().getTime()
   clearConsole('cyan', `HZ-BUILD v${require('../package').version}`);
   console.log(`> 项目模板生成于目录： ${chalk.yellow(dest)}`);
   // 拷贝模板文件
   await fs.copy(src, dest);
-  await fs.move(gitignore, gitignoreDest);
+  // await fs.move(gitignore, gitignoreDest);
+  await setProject(name);
   await spawnCmd(dest, null, 'git', ['init'])
   await spawnCmd(dest, null, 'git', ['add .'])
-  await spawnCmd(dest, null, 'git', ['commit -m "Initialize by HZ-BUILD"'])
+  await spawnCmd(dest, null, 'git', ['commit -m "Initialize by HZ-CLI"'])
   console.log(`> 成功初始化 Git 仓库`);
   console.log(`> 正在自动安装依赖，请稍等...`);
   console.log('');

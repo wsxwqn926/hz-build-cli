@@ -4,7 +4,7 @@
  * @Author: wangsx
  * @Date: 2021-03-18 11:02:38
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-03-27 15:11:40
+ * @LastEditTime: 2021-03-30 23:51:04
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -104,11 +104,11 @@ module.exports = {
     },
     output: {
       // 微应用的包名，这里与主应用中注册的微应用名称一致
-      library: "prisons3DMap",
+      library: "hzLib",
       // 将你的 library 暴露为所有的模块定义下都可运行的方式
       libraryTarget: "umd",
-      // 按需加载相关，设置为 webpackJsonp_prisons3DMap 即可
-      jsonpFunction: "webpackJsonp_prisons3DMap"
+      // 按需加载相关，设置为 webpackJsonp_hzLib 即可
+      jsonpFunction: "webpackJsonp_hzLib"
     },
     plugins: plugins
   }
