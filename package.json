@@ -1,0 +1,26 @@
+{
+  "name": "hz-build-cli",
+  "version": "1.0.0",
+  "description": "```\r yarn install\r ```",
+  "main": "index.js",
+  "bin": {
+    "hz-build": "./bin/x-build.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsxwqn926/hz-build-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wsxwqn926/hz-build-cli/issues"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "fs-extra": "^9.0.1"
+  }
+}
