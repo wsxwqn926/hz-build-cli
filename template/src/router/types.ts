@@ -1,19 +1,19 @@
 /*
  * @Author: your name
  * @Date: 2021-03-26 15:17:14
- * @LastEditTime: 2021-03-26 20:40:28
+ * @LastEditTime: 2021-04-03 13:02:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \hz-finance\src\router\types.ts
  */
-import type { RouteRecordRaw } from "vue-router";
+import type { RouteRecordRaw } from 'vue-router'
 // import { RoleEnum } from '/@/enums/roleEnum';
 
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export type Component<T extends any = any> =
   | ReturnType<typeof defineComponent>
-  | (() => Promise<typeof import("*.vue")>)
+  | (() => Promise<typeof import('*.vue')>)
   | (() => Promise<T>);
 
 export interface RouteMeta {
@@ -59,8 +59,9 @@ export interface RouteMeta {
   isLink?: boolean;
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, "meta"> {
+export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   name: string;
   meta: RouteMeta;
   component?: Component | string;
@@ -70,7 +71,7 @@ export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, "meta"> {
   fullPath?: string;
 }
 export interface MenuTag {
-  type?: "primary" | "error" | "warn" | "success";
+  type?: 'primary' | 'error' | 'warn' | 'success';
   content?: string;
   dot?: boolean;
 }

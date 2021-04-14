@@ -1,4 +1,4 @@
-# hz-finance
+# hz-finances
 
 ## Project setup
 ```

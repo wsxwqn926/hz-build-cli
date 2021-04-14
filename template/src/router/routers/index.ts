@@ -3,65 +3,63 @@
  * @Author: wangsx
  * @Date: 2021-03-23 16:44:36
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-03-29 09:40:59
+ * @LastEditTime: 2021-04-03 12:33:06
  */
 
 // import { PageEnum } from "@/enums/pageEnum";
-import type { AppRouteRecordRaw, AppRouteModule } from "@/router/types";
+import type { AppRouteRecordRaw, AppRouteModule } from '@/router/types'
 
-const modules: any = require.context("./modules", true, /\.ts$/);
+const modules: any = require.context('./modules', true, /\.ts$/)
 
-const routeModuleList: AppRouteModule[] = [];
+const routeModuleList: AppRouteModule[] = []
 
 modules.keys().forEach((key: any) => {
-  const mod = modules(key).default || modules(key);
-  const modList = Array.isArray(mod) ? [...mod] : [mod];
-  routeModuleList.push(...modList);
-});
+  const mod = modules(key).default || modules(key)
+  const modList = Array.isArray(mod) ? [...mod] : [mod]
+  routeModuleList.push(...modList)
+})
 const routeList: AppRouteRecordRaw[] = routeModuleList.map((item: AppRouteRecordRaw) => {
-  return Object.values(item);
-}).flat();
+  return Object.values(item)
+}).flat()
 
-export const asyncRoutes = [...routeModuleList];
+export const asyncRoutes = [...routeModuleList]
 
 export const RootRoute: AppRouteRecordRaw = {
-  path: "/",
-  name: "index",
-  component: () => import("@/views/Home.vue"),
+  path: '/',
+  name: 'index',
+  component: () => import('@/layout/index.vue'),
   // redirect: PageEnum.BASE_HOME,
-  redirect: "/about",
+  redirect: '/about',
   meta: {
-    title: "index"
+    title: 'index'
   },
   children: [...routeList]
-};
+}
 
 export const LoginRoute: AppRouteRecordRaw = {
-  path: "/login",
-  name: "Login",
-  component: () => import("@/views/login/Login.vue"),
+  path: '/login',
+  name: 'Login',
+  component: () => import('@/views/login/Login.vue'),
   meta: {
-    title: "routes.basic.login"
+    title: 'routes.basic.login'
   }
-};
+}
 // 404 on a page
 export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw[] = [{
-  path: "/404",
-  name: "404",
-  component: () => import("@/views/error-page/404.vue"),
+  path: '/404',
+  name: '404',
+  component: () => import('@/views/error-page/404.vue'),
   meta: {
-    title: "404",
+    title: '404',
     hideBreadcrumb: true
   }
 }, {
-  path: "/*",
-  name: "errorPage",
-  redirect: "/404",
+  path: '/*',
+  name: 'errorPage',
+  redirect: '/404',
   meta: {
-    title: "errorPage"
+    title: 'errorPage'
   }
-}];
+}]
 // Basic routing without permission
-export const basicRoutes = [LoginRoute, RootRoute, ...PAGE_NOT_FOUND_ROUTE];
-
-
+export const basicRoutes = [LoginRoute, RootRoute, ...PAGE_NOT_FOUND_ROUTE]

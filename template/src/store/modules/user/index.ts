@@ -10,31 +10,31 @@ import {
   ActionTree,
   MutationTree,
   Module
-} from "vuex";
-import { RootState } from "@/store";
-import { IUserState, IMutations, IActions, IUserInfo } from "./state-types";
+} from 'vuex'
+import { RootState } from '@/store'
+import { IUserState, IMutations, IActions, IUserInfo } from './state-types'
 
 const state: IUserState = {
-  token: "",
-  userName: "",
-  avatar: "",
-  introduction: "",
+  token: '',
+  userName: '',
+  avatar: '',
+  introduction: '',
   roles: [],
-  email: ""
-};
+  email: ''
+}
 
 const mutations: MutationTree<IUserState> & IMutations = {
   SET_TOKEN: (state: IUserState, token: string) => {
-    state.token = token;
+    state.token = token
   }
-};
+}
 
 const actions: ActionTree<IUserState, RootState> & IActions = {
   ACTION_LOGIN: ({ commit }, userInfo: IUserInfo) => {
-    const { username } = userInfo;
-    commit("SET_TOKEN", username);
+    const { username } = userInfo
+    commit('SET_TOKEN', username)
   }
-};
+}
 
 export const store: Module<IUserState, RootState> = {
   state,
@@ -43,4 +43,4 @@ export const store: Module<IUserState, RootState> = {
   // TODO: With namespaced option turned on, having problem how to use dispatch with action types...
   // But without it, a bigger store might have clashes in namings
   // namespaced: true,
-};
+}

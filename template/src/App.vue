@@ -1,49 +1,31 @@
 <!--
  * @Author: your name
- * @Date: 2021-03-26 15:13:35
- * @LastEditTime: 2021-03-29 13:52:40
+ * @Date: 2021-03-31 15:54:18
+ * @LastEditTime: 2021-04-01 11:18:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \hz-finance\src\App.vue
+ * @FilePath: \hz-finances\src\App.vue
 -->
 <template>
-  <div id="nav">
-    <router-link to="/login">login</router-link>|
-    <router-link :to="{ name: 'About' }">about</router-link>
-  </div>
   <router-view />
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
-// import { useProvider } from "@/store";
-// import router from "@/router";
+import { defineComponent } from 'vue'
 export default defineComponent({
-  setup() {
-    // useProvider();
-    // router.push({name:"About"});
-  }
-});
+
+})
 </script>
-
 <style lang="scss">
+@import "@/assets/style/utils.scss";
+@import "@/assets/style/base/reset.scss";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100%;
+  width: 100%;
+  color: #666;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.spanColor {
+  padding-right: 10px;
+  color: #60a5f5;
+  cursor: pointer;
 }
 </style>

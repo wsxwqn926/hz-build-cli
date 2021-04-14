@@ -6,8 +6,8 @@
  * @Description: In User Settings Edit
  * @FilePath: \hz-finance\src\plugins\http\types.ts
  */
-export type Method = "GET" | "POST" | "PUT" | "DELETE"
-export type ResponseType = "arraybuffer" | "blob" | "document" | "json" | "text" | "stream"
+export type Method = 'GET' | 'POST' | 'PUT' | 'DELETE'
+export type ResponseType = 'arraybuffer' | 'blob' | 'document' | 'json' | 'text' | 'stream'
 
 export interface IAxiosRequest<T = any> {
   baseURL?: string;
@@ -37,5 +37,6 @@ export interface ICustomResponse {
   readonly status: boolean;
   readonly message: string;
   data: any;
+  code: string;
   origin?: any;
 }

@@ -3,7 +3,7 @@
  * @Author: ZY
  * @Date: 2021-01-11 19:20:47
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-03-27 19:50:15
+ * @LastEditTime: 2021-03-31 10:37:42
 -->
 <template>
   <div class="wscn-http404-container">
@@ -11,22 +11,22 @@
       <div class="pic-404">
         <img
           class="pic-404__parent"
-          src="@/assets/404-images/404.png"
+          src="@/assets/images/404-images/404.png"
           alt="404"
         />
         <img
           class="pic-404__child left"
-          src="@/assets/404-images/404-cloud.png"
+          src="@/assets/images/404-images/404-cloud.png"
           alt="404"
         />
         <img
           class="pic-404__child mid"
-          src="@/assets/404-images/404-cloud.png"
+          src="@/assets/images/404-images/404-cloud.png"
           alt="404"
         />
         <img
           class="pic-404__child right"
-          src="@/assets/404-images/404-cloud.png"
+          src="@/assets/images/404-images/404-cloud.png"
           alt="404"
         />
       </div>
@@ -48,14 +48,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 export default defineComponent({
   setup() {
     return {
-      message: "页面不存在"
-    };
+      message: '页面不存在'
+    }
   }
-});
+})
 </script>
 
 <style lang="scss" scoped>

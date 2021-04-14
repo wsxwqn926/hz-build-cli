@@ -6,9 +6,9 @@
  * @Description: In User Settings Edit
  * @FilePath: \hz-finance\src\router\constant.ts
  */
-export const REDIRECT_NAME = "Redirect";
+export const REDIRECT_NAME = 'Redirect'
 
-export const PARENT_LAYOUT_NAME = "ParentLayout";
+export const PARENT_LAYOUT_NAME = 'ParentLayout'
 
 /**
  * @description: parent-layout
@@ -18,9 +18,9 @@ export const getParentLayout = () => {
     new Promise((resolve) => {
       resolve({
         name: PARENT_LAYOUT_NAME
-      });
-    });
-};
+      })
+    })
+}
 
 // export const getParentLayout = (name: string) => {
 //   return () =>
